@@ -101,18 +101,18 @@ scrolling:
 
 font:
   normal:
-    family: Menlo
+    family: Monaco 
     style: Regular
   bold:
-    family: Menlo
+    family: Monaco 
     style: Bold
   italic:
-    family: Menlo
+    family: Monaco 
     style: Italic
   bold_italic:
-    family: Menlo
+    family: Monaco 
     style: Bold Italic
-  size: 12.0
+  size: 10.0
   use_thin_strokes: true
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -121,6 +121,77 @@ draw_bold_text_with_bright_colors: true
 ##      START OF COLOR SCHEMES       ##
 #######################################
 schemes:
+
+  one-dark: &one-dark
+    # Default colors
+    primary:
+      background: '0x282c34'
+      foreground: '0xabb2bf'
+
+      # Bright and dim foreground colors
+      #
+      # The dimmed foreground color is calculated automatically if it is not present.
+      # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+      # is `false`, the normal foreground color will be used.
+      #dim_foreground: '0x9a9a9a'
+      bright_foreground: '0xe6efff'
+
+    # Cursor colors
+    #
+    # Colors which should be used to draw the terminal cursor. If these are unset,
+    # the cursor color will be the inverse of the cell color.
+    #cursor:
+    #  text: '0x000000'
+    #  cursor: '0xffffff'
+
+    # Normal colors
+    normal:
+      black:   '0x1e2127'
+      red:     '0xe06c75'
+      green:   '0x98c379'
+      yellow:  '0xd19a66'
+      blue:    '0x61afef'
+      magenta: '0xc678dd'
+      cyan:    '0x56b6c2'
+      white:   '0x828791'
+
+    # Bright colors
+    bright:
+      black:   '0x5c6370'
+      red:     '0xe06c75'
+      green:   '0x98c379'
+      yellow:  '0xd19a66'
+      blue:    '0x61afef'
+      magenta: '0xc678dd'
+      cyan:    '0x56b6c2'
+      white:   '0xe6efff'
+
+    # Dim colors
+    #
+    # If the dim colors are not set, they will be calculated automatically based
+    # on the `normal` colors.
+    dim:
+      black:   '0x1e2127'
+      red:     '0xe06c75'
+      green:   '0x98c379'
+      yellow:  '0xd19a66'
+      blue:    '0x61afef'
+      magenta: '0xc678dd'
+      cyan:    '0x56b6c2'
+      white:   '0x828791'
+
+    # Indexed Colors
+    #
+    # The indexed colors include all colors from 16 to 256.
+    # When these are not set, they're filled with sensible defaults.
+    #indexed_colors:
+    #  - { index: 16, color: '0x000000' }
+
+
+
+
+
+
   ### Doom One ###
   doom-one: &doom-one
     primary:
@@ -150,6 +221,38 @@ schemes:
       magenta: '#a9a1e1'
       cyan:    '#46d9ff'
       white:   '#dfdfdf'
+      
+# iTerm2 Material Design - Palenight theme for Alacritty
+# Source : https://github.com/JonathanSpeek/palenight-iterm2
+
+  palenight: &palenight
+    # Default colors
+    primary:
+      background: '0x292d3e'
+      foreground: '0xd0d0d0'
+
+    # Normal colors
+    normal:
+      black:   '0x292d3e'
+      red:     '0xf07178'
+      green:   '0xc3e88d'
+      yellow:  '0xffcb6b'
+      blue:    '0x82aaff'
+      magenta: '0xc792ea'
+      cyan:    '0x89ddff'
+      white:   '0xd0d0d0'
+
+    # Bright colors
+    bright:
+      black:   '0x434758'
+      red:     '0xff8b92'
+      green:   '0xddffa7'
+      yellow:  '0xffe585'
+      blue:    '0x9cc4ff'
+      magenta: '0xe1acff'
+      cyan:    '0xa3f7ff'
+      white:   '0xffffff'
+
 
   ### Dracula ###
   dracula: &dracula
@@ -270,7 +373,7 @@ schemes:
   nord: &nord
     # Default colors
     primary:
-      background: '#2E3440'
+      background: '#3B4252'
       foreground: '#D8DEE9'
 
     # Normal colors
@@ -432,6 +535,105 @@ schemes:
       white:   '#282a2e'
 
 
+  sunsamurai: &sunsamurai
+
+      primary:
+          background:     '#191514'
+          foreground:     '#c5c4c4'
+
+      cursor:
+          text:           '#191514'
+          cursor:         '#df201b'
+
+      normal:
+          black:          '#191514'
+          red:            '#80110c'
+          green:          '#cc130d'
+          yellow:         '#e1201b'
+          blue:           '#f83222'
+          magenta:        '#e5430f'
+          cyan:           '#fc6b10'
+          white:          '#c5c4c4'
+
+      bright:
+          black:          '#524f4e'
+          red:            '#80110c'
+          green:          '#cc130d'
+          yellow:         '#e1201b'
+          blue:           '#f83222'
+          magenta:        '#e5430f'
+          cyan:           '#fc6b10'
+          white:          '#c5c4c4'
+
+
+
+  magicforest: &magicforest
+
+      primary:
+          background:     '#070307'
+          foreground:     '#a8a1a7'
+
+      cursor:
+          text:           '#a8a1a7'
+          cursor:         '#aa0f45'
+
+      normal:
+          black:          '#070307'
+          red:            '#503e77'
+          green:          '#565546'
+          yellow:         '#c22f38'
+          blue:           '#7f5c56'
+          magenta:        '#7361a2'
+          cyan:           '#8f9a81'
+          white:          '#a8a1a7'
+
+      bright:
+          black:          '#514350'
+          red:            '#503e77'
+          green:          '#565546'
+          yellow:         '#c22f38'
+          blue:           '#7f5c56'
+          magenta:        '#7361a2'
+          cyan:           '#8f9a81'
+          white:          '#a8a1a7'
+
+
+
+
+  japannigth: &japannigth
+
+      primary:
+          background:     '#0d1b1e'
+          foreground:     '#eeeeee'
+
+      cursor:
+          text:           '#0d1b1e'
+          cursor:         '#adc2c0'
+
+      normal:
+          black:          '#0d1b1e'
+          red:            '#5c4058'
+          green:          '#982c33'
+          yellow:         '#a3314f'
+          blue:           '#c04758'
+          magenta:        '#465b90'
+          cyan:           '#b6619b'
+          white:          '#eeeeee'
+
+      bright:
+          black:          '#798786'
+          red:            '#5c4058'
+          green:          '#982c33'
+          yellow:         '#a3314f'
+          blue:           '#c04758'
+          magenta:        '#465b90'
+          cyan:           '#b6619b'
+          white:          '#eeeeee'
+
+
+
+
+
   redforest: &redforest
 
       primary:
@@ -462,6 +664,41 @@ schemes:
           cyan:           '#ba5f68'
           white:          '#c4c3c7'
 
+
+
+
+# Colors (Tokyo Night)
+# Source: https://github.com/zatchheems/tokyo-night-alacritty-theme
+  tokyonight: &tokyonight
+    # Default colors
+    primary:
+      background: '0x1a1b26'
+      foreground: '0xa9b1d6'
+
+    # Normal colors
+    normal:
+      black:   '0x32344a'
+      red:     '0xf7768e'
+      green:   '0x9ece6a'
+      yellow:  '0xe0af68'
+      blue:    '0x7aa2f7'
+      magenta: '0xad8ee6'
+      cyan:    '0x449dab'
+      white:   '0x787c99'
+
+    # Bright colors
+    bright:
+      black:   '0x444b6a'
+      red:     '0xff7a93'
+      green:   '0xb9f27c'
+      yellow:  '0xff9e64'
+      blue:    '0x7da6ff'
+      magenta: '0xbb9af7'
+      cyan:    '0x0db9d7'
+      white:   '0xacb0d0'
+
+
+
 ######################################################################
 ## SET THEME: Choose ONE color scheme from those in the above list. ##
 ## ###################################################################
@@ -476,7 +713,7 @@ schemes:
 # *solarized-dark
 # *tomorrow-night
 
-colors: *redforest
+colors: *one-dark
 
 #######################################
 ##       END OF COLOR SCHEMES        ##
@@ -512,8 +749,8 @@ colors: *redforest
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-#background_opacity: 1.0
-background_opacity: 0.92
+background_opacity: 1.0
+#background_opacity: 0.80
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
@@ -549,8 +786,8 @@ background_opacity: 0.92
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
+shell:
+  program: /bin/zsh
 #  args:
 #    - --login
 
