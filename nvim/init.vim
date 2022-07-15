@@ -42,6 +42,7 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'terryma/vim-expand-region'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -56,8 +57,8 @@ if (empty($TMUX))
   endif
 endif
 let g:one_allow_italics = 1 " I love italic for comments
-let g:airline_theme='one'
-colorscheme one
+let g:airline_theme='nord'
+colorscheme nord
 set background=dark " for the dark version
 
 " trasparent background

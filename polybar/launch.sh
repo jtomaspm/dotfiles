@@ -11,11 +11,78 @@ launch_bar() {
 	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 	# Launch the bar
-    MONITOR="DP-4" polybar --reload -q main -c "$dir/forest/config.ini" &	
-    if [[ $(xrandr -q | grep -w 'HDMI-0 connected') ]]; then
+	if [[ "$style" == "hack" || "$style" == "cuts" ]]; then
+		polybar -q top -c "$dir/$style/config.ini" &
+		polybar -q bottom -c "$dir/$style/config.ini" &
+	elif [[ "$style" == "pwidgets" ]]; then
+		bash "$dir"/pwidgets/launch.sh --main
+	else
+        MONITOR="DP-4" polybar --reload -q main -c "$dir/$style/config.ini" &	
         sleep 0.5
-        MONITOR="HDMI-0" polybar --reload -q main -c "$dir/forest/config.ini" &	
-    fi
+        if [[ $(xrandr -q | grep -w 'HDMI-0 connected') ]]; then
+            MONITOR="HDMI-0" polybar --reload -q main -c "$dir/$style/config.ini" &	
+        fi
+        if [[ $(xrandr -q | grep -w 'DP-0 connected') ]]; then
+            MONITOR="DP-0" polybar --reload -q main -c "$dir/$style/config.ini" &	
+        fi
+	fi
 }
 
-launch_bar
+if [[ "$1" == "--material" ]]; then
+	style="material"
+	launch_bar
+
+elif [[ "$1" == "--shades" ]]; then
+	style="shades"
+	launch_bar
+
+elif [[ "$1" == "--hack" ]]; then
+	style="hack"
+	launch_bar
+
+elif [[ "$1" == "--docky" ]]; then
+	style="docky"
+	launch_bar
+
+elif [[ "$1" == "--cuts" ]]; then
+	style="cuts"
+	launch_bar
+
+elif [[ "$1" == "--shapes" ]]; then
+	style="shapes"
+	launch_bar
+
+elif [[ "$1" == "--grayblocks" ]]; then
+	style="grayblocks"
+	launch_bar
+
+elif [[ "$1" == "--blocks" ]]; then
+	style="blocks"
+	launch_bar
+
+elif [[ "$1" == "--colorblocks" ]]; then
+	style="colorblocks"
+	launch_bar
+
+elif [[ "$1" == "--forest" ]]; then
+	style="forest"
+	launch_bar
+
+elif [[ "$1" == "--pwidgets" ]]; then
+	style="pwidgets"
+	launch_bar
+
+elif [[ "$1" == "--panels" ]]; then
+	style="panels"
+	launch_bar
+
+else
+	cat <<- EOF
+	Usage : launch.sh --theme
+		
+	Available Themes :
+	--blocks    --colorblocks    --cuts      --docky
+	--forest    --grayblocks     --hack      --material
+	--panels    --pwidgets       --shades    --shapes
+	EOF
+fi

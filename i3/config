@@ -9,20 +9,16 @@
 # StartUp
 #
 
+exec_always --no-startup-id setxkbmap -layout pt
+# exec_always --no-startup-id /home/jtomaspm/.config/i3/i3ipc-dynamic-tiling/i3ipc-dynamic-tiling
+exec_always --no-startup-id autotiling
+exec_always --no-startup-id  nitrogen --restore  
 exec --no-startup-id picom --experimental-backends --backend glx --xrender-sync-fence
 exec_always --no-startup-id blueman-applet
 exec_always --no-startup-id nm-applet --indicator
-exec --no-startup-id bash ~/.scripts/defaultmonitorlayout.sh
 exec flameshot &
 
-
-exec_always --no-startup-id setxkbmap -layout pt
-exec_always --no-startup-id /home/jtomaspm/.config/i3/i3ipc-dynamic-tiling/i3ipc-dynamic-tiling
-exec_always --no-startup-id  nitrogen --restore  
-
-
-
-
+exec --no-startup-id bash ~/.screenlayout/autoselector.sh
 #
 # Bar
 #
@@ -30,13 +26,16 @@ exec_always --no-startup-id  nitrogen --restore
 # comment this if not using polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --forest
 
-
 # uncomment this for default i3 status bar
 #bar {
   #position top
   #status_command i3status
 #}
 
+
+#
+# Display Settings
+#
 
 
 
@@ -54,7 +53,7 @@ gaps outer $outer_gaps
 floating_modifier $mod
 
 # borders
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 
 # mouse
 focus_follows_mouse no
@@ -75,8 +74,8 @@ workspace_auto_back_and_forth yes
 # Variables
 
 # gaps-variables
-set $inner_gaps 8
-set $outer_gaps 0
+set $inner_gaps 7
+set $outer_gaps 5
 
 # apps-variables
 set $term --no-startup-id gnome-terminal
@@ -180,19 +179,19 @@ bindsym $mod+Shift+s        	move workspace next_on_output; workspace next_on_ou
 
 # d
 # %% $mod+d: dmenu %%
-bindsym $mod+d                  exec --no-startup-id dmenu_run -b
+bindsym $mod+d                  exec --no-startup-id ~/.config/rofi/launchers/text/launcher.sh &
 
 # f
 # %% $mod+f: nautilus %%
 # %% $mod+Shift+f: ranger %%
 bindsym $mod+Shift+f 			exec $term -e ranger
-bindsym $mod+f			        exec --no-startup-id nautilus
+bindsym $mod+f			        exec --no-startup-id nautilus 
 
 # g
 # %% $mod+g: gaps on %%
 # %% $mod+Shift+g: gaps off %%
-bindsym $mod+g		            gaps inner current set $inner_gaps; gaps outer current set $outer_gaps
-bindsym $mod+Shift+g		    gaps inner current set 0; gaps outer current set 0
+bindsym $mod+g		            gaps outer current toggle 10;
+bindsym $mod+Shift+g		    gaps outer current toggle 30;
 
 # %% $mod+[h|j|k|l]: focus %%
 # %% $mod+Shift+[h|j|k|l]: move %%
@@ -269,9 +268,9 @@ bindsym $mod+Shift+Tab          layout tabbed
 # %% $mod+F3: reboot %%
 # %% $mod+F4: lock screen %%
 bindsym $mod+F1		            restart
-bindsym $mod+F2 			    exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-bindsym $mod+F3 			    exec --no-startup-id $reboot
-bindsym $mod+F4		            exec --no-startup-id $lock
+bindsym $mod+F2 			    exec --no-startup-id ~/.screenlayout/autoselector.sh
+bindsym $mod+F3		            exec --no-startup-id $lock
+bindsym $mod+F4		            exec --no-startup-id ~/.config/rofi/powermenu/powermenu.sh
 
 # %% $mod+F5: screenshot %%
 # %% $mod+Shift+F5: screenshot -ac %%
@@ -344,8 +343,8 @@ for_window [class="transmission-gtk"] floating enable
 for_window [class="Transmission-gtk"] floating enable
 for_window [class="lxappearance"] floating enable
 for_window [class="Lxappearance"] floating enable
-for_window [class="org.gnome.Nautilus"] floating enable
-for_window [class="Org.gnome.Nautilus"] floating enable
+#for_window [class="org.gnome.Nautilus"] floating enable
+#for_window [class="Org.gnome.Nautilus"] floating enable
 for_window [class="nitrogen"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="ulauncher"] floating enable
@@ -356,8 +355,8 @@ for_window [class="gnome-calculator"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="alarm-clock-applet"] floating enable
 for_window [class="Alarm-clock-applet"] floating enable
-for_window [class="gnome-terminal"] floating enable
-for_window [class="Gnome-terminal"] floating enable
+# for_window [class="gnome-terminal"] floating enable
+# for_window [class="Gnome-terminal"] floating enable
 for_window [class="file-roller"] floating enable
 for_window [class="File-roller"] floating enable
 
