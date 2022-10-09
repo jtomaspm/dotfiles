@@ -17,14 +17,7 @@ launch_bar() {
 	elif [[ "$style" == "pwidgets" ]]; then
 		bash "$dir"/pwidgets/launch.sh --main
 	else
-        MONITOR="DP-4" polybar --reload -q main -c "$dir/$style/config.ini" &	
-        sleep 0.5
-        if [[ $(xrandr -q | grep -w 'HDMI-0 connected') ]]; then
-            MONITOR="HDMI-0" polybar --reload -q main -c "$dir/$style/config.ini" &	
-        fi
-        if [[ $(xrandr -q | grep -w 'DP-0 connected') ]]; then
-            MONITOR="DP-0" polybar --reload -q main -c "$dir/$style/config.ini" &	
-        fi
+		polybar -q main -c "$dir/$style/config.ini" &	
 	fi
 }
 
