@@ -1,0 +1,7 @@
+{
+    "custom/power-menu" : {
+        "exec": "echo ''",
+        "on-click": "~/.config/waybar/modules/power-menu-custom/powerMenu.sh"
+    }
+}
+

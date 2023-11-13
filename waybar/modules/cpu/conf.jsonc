@@ -1,0 +1,6 @@
+{
+    "cpu": {
+        "format": " {usage}%",
+        "on-click": "gnome-system-monitor"
+    }
+}

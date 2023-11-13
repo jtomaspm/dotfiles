@@ -1,0 +1,183 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=$SCRIPT_DIR/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=0
+markup=none
+
+[rofi]
+full_text=  
+command=rofi -modi drun,run -show drun; echo "  "
+color=#34a8ff
+separator=false
+
+[firefox]
+full_text=  
+command=firefox; echo "  "
+color=#ff4f2f
+separator=false
+
+[terminal]
+full_text=  
+command=gnome-terminal; echo "  " 
+separator=false
+
+[file_manager]
+full_text=  
+command=nautilus; echo "  "
+color=#dc9119
+separator=false
+
+[code]
+full_text=  
+command=code; echo "  "
+color=#00c0ff
+separator=false
+
+[git]
+full_text=   
+command=github-desktop; echo "   " 
+
+[sep_arrow]
+full_text=
+command=echo ""
+color=#ebcb8b
+background=#2e3440
+
+[cpu]
+interval=10
+command=~/.config/i3blocks/scripts/cpu/cpu; [[ -z "${BLOCK_BUTTON}" ]] || gnome-system-monitor >/dev/null
+color=#000000
+background=#ebcb8b
+
+[memory]
+label= 
+color=#000000
+background=#ebcb8b
+command=~/.config/i3blocks/scripts/memory/memory; [[ -z "${BLOCK_BUTTON}" ]] || gnome-system-monitor >/dev/null
+separator=false
+interval=5
+
+[filler]
+full_text= 
+command=echo " "
+background=#ebcb8b
+
+[disk]
+label=
+color=#000000
+background=#ebcb8b
+command=~/.config/i3blocks/scripts/disk/disk; [[ -z "${BLOCK_BUTTON}" ]] || gnome-disks >/dev/null
+interval=30
+separator=false
+
+[filler]
+full_text= 
+command=echo " "
+background=#ebcb8b
+
+[sep_arrow]
+full_text=
+command=echo ""
+color=#a3be8c
+background=#ebcb8b
+
+[iface]
+label= 
+color=#000000
+background=#a3be8c
+interval=10
+separator=false
+
+[nm_menu]
+command=echo "  "; [[ -z "${BLOCK_BUTTON}" ]] || networkmanager_dmenu >/dev/null
+interval=10
+color=#000000
+background=#a3be8c
+
+[bt_menu]
+command=echo " "; [[ -z "${BLOCK_BUTTON}" ]] || blueman-manager >/dev/null
+interval=10
+color=#000000
+background=#a3be8c
+
+[filler]
+full_text= 
+command=echo " "
+background=#a3be8c
+
+[sep_arrow]
+full_text=
+command=echo ""
+color=#b48ead
+background=#a3be8c
+
+[filler]
+full_text= 
+command=echo " "
+background=#b48ead
+
+[keyboard]
+interval=5
+command=~/.config/i3blocks/scripts/keyboard/keyboardscan; [[ -z "${BLOCK_BUTTON}" ]] || ~/.config/i3blocks/scripts/keyboard/keyboard >/dev/null
+color=#000000
+background=#b48ead
+
+[dnf]
+interval=60
+command=~/.config/i3blocks/scripts/dnf/dnf; [[ -z "${BLOCK_BUTTON}" ]] || gnome-software >/dev/null
+color=#000000
+background=#b48ead
+
+[battery_tray]
+command=~/.config/i3blocks/scripts/battery/battery; [[ -z "${BLOCK_BUTTON}" ]] || xfce4-power-manager-settings >/dev/null
+interval=10
+color=#000000
+background=#b48ead
+
+[volume]
+command=~/.config/i3blocks/scripts/volume/volume; [[ -z "${BLOCK_BUTTON}" ]] || pavucontrol >/dev/null
+color=#000000
+background=#b48ead
+interval=1
+
+[filler]
+full_text= 
+command=echo " "
+background=#b48ead
+
+[sep_arrow]
+full_text=
+command=echo ""
+color=#8fbcbb
+background=#b48ead
+
+[time]
+command=date '+  %d/%m  %H:%M '; [[ -z "${BLOCK_BUTTON}" ]] || gnome-calendar >/dev/null
+interval=5
+color=#000000
+background=#8fbcbb

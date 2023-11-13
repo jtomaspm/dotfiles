@@ -1,0 +1,190 @@
+@import "color.css";
+
+/* --- GENERAL --- */
+* {
+  font-family: FiraCode Nerd Font;
+  font-size: 15px;
+  min-height: 0;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+}
+
+#window,
+#clock,
+#network,
+#pulseaudio,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#battery,
+#custom-updates,
+#custom-dunst,
+#tray,
+#custom-app-launcher,
+#custom-power-menu,
+#custom-bluetooth,
+#custom-lock,
+#custom-power {
+  background-color: @surface0;
+  padding: 0.5rem 0.75rem;
+  margin: 5px 0;
+}
+
+/* --- LEFT MODULES --- */
+
+#custom-app-launcher {
+    border-radius: 1rem;
+    margin-right: 1rem;
+    margin-left: 0.5rem;
+  padding-right: 1rem;
+}
+
+#custom-app-launcher houver {
+    color: @teal;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px 1rem 5px 0rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  background-color: @surface0;
+}
+
+#workspaces button {
+  color: @lavender;
+  background-color: transparent;
+  border-radius: 2rem;
+  padding: 0.25rem;
+  margin: 0.3rem 0;
+
+  transition: color 0.5s, background-color 0.5s;
+}
+
+#workspaces button.empty {
+  color: @overlay0;
+}
+
+#workspaces button.special {
+  color: @rosewater;
+}
+
+#workspaces button.active {
+  color: @sky;
+  background-color: @surface1;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  background-color: @surface2;
+}
+
+#window {
+  border-radius: 1rem;
+  background-color: @surface0;
+  margin-right: 1rem;
+}
+
+/* --- CENTER MODULES --- */
+
+#clock {
+  border-radius: 1rem;
+  color: @blue;
+}
+
+/* --- RIGHT MODULES --- */
+
+#network {
+  color: @teal;
+  border-radius: 0rem 1rem 1rem 0rem;
+  padding-right: 1.2rem;
+  margin-right: 1rem;
+  padding-left: 0rem;
+}
+
+#pulseaudio {
+  color: @mauve;
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+
+#cpu {
+  border-radius: 1rem 0px 0px 1rem;
+  color: @mauve;
+}
+
+#memory {
+  color: @peach;
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+#temperature {
+  color: @flamingo;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#battery {
+  color: @green;
+  margin-left: 1rem;
+  border-radius: 1rem 0rem 0rem 1rem;
+  padding-right: 0rem;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#custom-power-menu {
+    border-radius: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-right: 1rem;
+}
+
+#custom-power-menu houver {
+    color: @teal;
+}
+
+#custom-updates {
+  color: @red;
+}
+
+#custom-dunst {
+  margin-right: 0.75rem;
+  border-radius: 0px 1rem 1rem 0px;
+  color: @sapphire;
+}
+
+/*---*/
+
+#tray {
+  border-radius: 1rem;
+}
+
+/* --- */
+
+#custom-lock {
+  border-radius: 1rem 0px 0px 1rem;
+  color: @lavender;
+}
+
+#custom-power {
+  margin: 5px 5px 5px 0;
+  border-radius: 0px 1rem 1rem 0px;
+  color: @red;
+}
+

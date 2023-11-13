@@ -1,0 +1,12 @@
+{
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "",
+        "format-ethernet": "",
+        "tooltip-format": " {ifname}:{ipaddr}/{cidr}",
+        "format-linked": "",
+        "format-disconnected": "⚠",
+        "format-alt": "{essid} {ifname}:{ipaddr}/{cidr}",
+        "on-click-right": "networkmanager_dmenu"
+    }
+}

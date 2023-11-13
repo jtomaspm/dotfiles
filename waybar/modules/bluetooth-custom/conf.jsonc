@@ -1,0 +1,7 @@
+{
+    "custom/bluetooth" : {
+        "exec": "echo ''",
+        "on-click": "blueman-manager"
+    }
+}
+

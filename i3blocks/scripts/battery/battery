@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+BAT=$(cat /sys/class/power_supply/BAT1/capacity)
+echo -e " $BAT%"

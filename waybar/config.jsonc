@@ -1,0 +1,26 @@
+{
+     "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    //"height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    //"spacing": 4, // Gaps between modules (4px)
+    "modules-left": ["custom/app-launcher", "hyprland/workspaces" ,"cpu", "memory", "temperature"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray",  "pulseaudio", "battery", "custom/bluetooth","network", "clock", "custom/power-menu"],
+    "include": [
+        "~/.config/waybar/modules/battery/conf.jsonc",
+        "~/.config/waybar/modules/clock/conf.jsonc",
+        "~/.config/waybar/modules/cpu/conf.jsonc",
+        "~/.config/waybar/modules/keyboard-state/conf.jsonc",
+        "~/.config/waybar/modules/memory/conf.jsonc",
+        "~/.config/waybar/modules/network/conf.jsonc",
+        "~/.config/waybar/modules/pulseaudio/conf.jsonc",
+        "~/.config/waybar/modules/temperature/conf.jsonc",
+        "~/.config/waybar/modules/app-launcher-custom/conf.jsonc",
+        "~/.config/waybar/modules/bluetooth-custom/conf.jsonc",
+        "~/.config/waybar/modules/power-menu-custom/conf.jsonc",
+        "~/.config/waybar/modules/window-hyprland/conf.jsonc",
+        "~/.config/waybar/modules/tray/conf.jsonc"
+    ]
+}
+

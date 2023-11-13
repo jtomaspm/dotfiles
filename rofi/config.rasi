@@ -1,6 +1,2 @@
-/** Basic config file **/
-
-configuration {
-  show-icons:         true;
-  icon-theme:         "Papirus";
-}
+//@theme "/usr/share/rofi/themes/Arc-Dark.rasi"
+@theme "/home/pop/.local/share/rofi/themes/squared-nord.rasi"

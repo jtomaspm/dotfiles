@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+updates=$(dnf check-update | grep updates | wc -l)
+echo -e "  $updates "

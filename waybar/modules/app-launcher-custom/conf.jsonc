@@ -1,0 +1,6 @@
+{
+    "custom/app-launcher" : {
+        "exec": "echo ''",
+        "on-click": "~/.config/waybar/modules/app-launcher-custom/appLauncher.sh"
+    }
+}

@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+VOL=$(amixer sget Master | grep % | awk '{print $5}' | head -n 1); VOL=$(echo ${VOL/\[/}); VOL=$(echo ${VOL/\]/})
+echo "  $VOL"

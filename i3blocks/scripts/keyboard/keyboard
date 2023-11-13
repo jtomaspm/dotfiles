@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+LANG=$(~/.config/i3blocks/scripts/keyboard/keyboardscan)
+echo "$LANG"
+
+if [ "$LANG" = "pt" ] ; then
+    setxkbmap us
+    echo "Set to US"
+else
+    setxkbmap pt
+    echo "Set to PT"
+fi
